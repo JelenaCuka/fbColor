@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "fbColor",
+    "version": "1.0",
+    "description": "Collects data about colors on screen. Made for student research",
+    "icons": {
+        "128": "icon128.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "background": {
+        "scripts": ["eventPage.js","jquery-3.3.1.min.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.facebook.com/*"],
+            "js": ["content.js","jquery-3.3.1.min.js"]
+        }
+    ],
+    "page_action": {
+      "default_icon": "icon16.png",
+      "default_title": "collects colors"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "<all_urls>",
+        "storage",
+        "https://www.facebook.com/*",
+        "https://www.jelenacuka.com/*",      
+        "http://www.jelenacuka.com/*"
+    ]
+}
